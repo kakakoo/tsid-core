@@ -1,0 +1,48 @@
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+
+
+spring:
+  config:
+    activate:
+      on-profile: external-dev
+
+external:
+  client:
+    tsid:
+      base-url: https://auth.tsidtech.com
+      token-url: /oauth/token
+      profile-url: /api/v1/user/me
+      cert-make-url: /api/cert/v1/push
+      cert-check-url: /api/cert/v1/check
+    naver:
+      sns:
+        base-url: https://sens.apigw.ntruss.com
+        url: /sms/v2/services/tsid-key/messages
+    slack:
+      webhook:
+        base-url: https://hooks.slack.com/services
+
+naver:
+  api:
+    access-key: access-key
+    secret-key: secret-key
+  endpoint: https://kr.object.ncloudstorage.com/
+  temp:
+    dir: /data
+  region: kr-standard
+  bucket: bucket
+
+slack:
+  token:
+    tsid:
+      dev:
+        notification: slack-token
+      prod:
+        notification: slack-token
+    statistic:
+      dev: slack-token
+      prod: slack-token

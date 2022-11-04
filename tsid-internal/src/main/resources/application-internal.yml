@@ -1,0 +1,26 @@
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+
+spring:
+  config:
+    activate:
+      on-profile: internal
+
+internal:
+  client:
+    sns:
+      auth : auth
+      base-url: sns-url
+      send-email-url : /api/email/send
+      send-sms-default : /api/sms/send
+      send-sms-custom : /api/sms/send/custom
+      send-push-default : /api/push/send
+      send-push-all: /api/push/send/all
+      send-email: /api/email/send
+
+tsid:
+  skfs:
+    url: skfs-url
